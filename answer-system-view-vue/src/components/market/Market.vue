@@ -13,51 +13,61 @@
                     :direction="direction"
             >
 
-                <el-card class="box-card">
-                    <div slot="header">
-                        <span>参数设置</span>
-                    </div>
-                    <div>
-                        <el-form :inline="true" v-model="filter_index" class="demo-form-inline">
-
-                            <el-form-item label="涨跌区间(%)">
+                <el-form v-model="filter_index" style="text-align: left;margin: 5%">
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <span>设定参数</span>
+                         </div>
+                        <div class="text item">
+                            <el-form-item label="涨跌区间(%)：">
                                 <el-input v-model="filter_index.raise_fall_zone_fall" style="width: 50px"
                                           placeholder="-1"></el-input>
+                                <span>   < 涨跌 <   </span>
                                 <el-input v-model="filter_index.raise_fall_zone_rise" style="width: 50px"
                                           placeholder="2"></el-input>
-                            </el-form-item>
-                            <el-divider></el-divider>
-                            <el-form-item label="差价(%)">
-                                <el-input v-model="filter_index.gap_price" style="width: 50px"
-                                          placeholder="2"></el-input>
-                            </el-form-item>
-                            <el-divider></el-divider>
-                            <el-form-item label="瞬涨(%)">
-                                <el-input v-model="filter_index.instant_rise" style="width: 50px"
-                                          placeholder="1"></el-input>
-                            </el-form-item>
 
-                            <el-form-item label="瞬跌(%)">
-                                <el-input v-model="filter_index.instant_fall" style="width: 50px"
-                                          placeholder="-2"></el-input>
                             </el-form-item>
-                            <el-divider></el-divider>
-                            <el-form-item label="分钟数">
-                                <el-input v-model="filter_index.how_many_minute" style="width: 50px"
-                                          placeholder="1"></el-input>
-                            </el-form-item>
-                            <el-form-item label="分钟涨(%)">
-                                <el-input v-model="filter_index.minute_rise" style="width: 50px"
-                                          placeholder="1"></el-input>
-                            </el-form-item>
-                            <el-form-item label="分钟跌(%)">
-                                <el-input v-model="filter_index.minute_fall" style="width: 50px"
-                                          placeholder="-2"></el-input>
-                            </el-form-item>
+                            <el-form-item label="价差(%)：">
+                        <span>  大于 </span>
+                        <el-input v-model="filter_index.gap_price" style="width: 50px"
+                                  placeholder="2"></el-input>
 
-                        </el-form>
-                    </div>
-                </el-card>
+                    </el-form-item>
+
+
+                    <el-form-item label="瞬涨(%): ">
+                        <span>  大于 </span>
+                        <el-input v-model="filter_index.instant_rise" style="width: 50px"
+                                  placeholder="1"></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="瞬跌(%)：">
+                        <span>  小于 </span>
+                        <el-input v-model="filter_index.instant_fall" style="width: 50px"
+                                  placeholder="-2"></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="分钟数：">
+                        <el-input v-model="filter_index.how_many_minute" style="width: 50px"
+                                  placeholder="1"></el-input>
+                    </el-form-item>
+                    <el-form-item label="分钟涨(%)：">
+                        <span>  大于 </span>
+                        <el-input v-model="filter_index.minute_rise" style="width: 50px"
+                                  placeholder="1"></el-input>
+                    </el-form-item>
+                    <el-form-item label="分钟跌(%)：">
+                        <span>  小于 </span>
+                        <el-input v-model="filter_index.minute_fall" style="width: 50px"
+                                  placeholder="-2"></el-input>
+                    </el-form-item>
+                        </div>
+                    </el-card>
+
+
+
+
+                </el-form>
 
 
             </el-drawer>
@@ -65,7 +75,7 @@
         </el-header>
 
 
-        <el-main style="margin-top: 1%">
+        <el-main>
             <el-table
                     :data="tableData"
                     :cell-style="tableCellClassName"
