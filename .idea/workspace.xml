@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -314,6 +311,7 @@
       <workItem from="1589606004080" duration="803000" />
       <workItem from="1589706140189" duration="568000" />
       <workItem from="1589714016482" duration="2929000" />
+      <workItem from="1589717522464" duration="54000" />
     </task>
     <servers />
   </component>
@@ -325,7 +323,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

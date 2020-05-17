@@ -8,7 +8,7 @@
             </el-button>
 
             <el-drawer
-                    title="过滤参数设置"
+
                     :visible.sync="drawer"
                     :direction="direction"
             >
@@ -205,7 +205,7 @@
                     return
                 }
 
-                if (current_event.indexOf(this.filter_index.how_many_minute+"分钟") === -1){
+                if (current_event.indexOf(this.filter_index.how_many_minute + "分钟") === -1) {
                     return
                 }
 
