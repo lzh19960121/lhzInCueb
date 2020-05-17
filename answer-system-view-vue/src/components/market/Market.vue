@@ -3,31 +3,65 @@
 
 
         <el-header style="margin-top: 1%">
-            <el-form :inline="true" v-model="filter_index" class="demo-form-inline">
+            <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+                参数设置
+            </el-button>
 
-                <el-form-item label="涨跌区间(%)">
-                    <el-input v-model="filter_index.raise_fall_zone_fall" style="width: 50px" placeholder="-1"></el-input>
-                    <el-input v-model="filter_index.raise_fall_zone_rise" style="width: 50px" placeholder="2"></el-input>
-                </el-form-item>
+            <el-drawer
+                    title="过滤参数设置"
+                    :visible.sync="drawer"
+                    :direction="direction"
+            >
+
+                <el-card class="box-card">
+                    <div slot="header">
+                        <span>参数设置</span>
+                    </div>
+                    <div>
+                        <el-form :inline="true" v-model="filter_index" class="demo-form-inline">
+
+                            <el-form-item label="涨跌区间(%)">
+                                <el-input v-model="filter_index.raise_fall_zone_fall" style="width: 50px"
+                                          placeholder="-1"></el-input>
+                                <el-input v-model="filter_index.raise_fall_zone_rise" style="width: 50px"
+                                          placeholder="2"></el-input>
+                            </el-form-item>
+                            <el-divider></el-divider>
+                            <el-form-item label="差价(%)">
+                                <el-input v-model="filter_index.gap_price" style="width: 50px"
+                                          placeholder="2"></el-input>
+                            </el-form-item>
+                            <el-divider></el-divider>
+                            <el-form-item label="瞬涨(%)">
+                                <el-input v-model="filter_index.instant_rise" style="width: 50px"
+                                          placeholder="1"></el-input>
+                            </el-form-item>
+
+                            <el-form-item label="瞬跌(%)">
+                                <el-input v-model="filter_index.instant_fall" style="width: 50px"
+                                          placeholder="-2"></el-input>
+                            </el-form-item>
+                            <el-divider></el-divider>
+                            <el-form-item label="分钟数">
+                                <el-input v-model="filter_index.how_many_minute" style="width: 50px"
+                                          placeholder="1"></el-input>
+                            </el-form-item>
+                            <el-form-item label="分钟涨(%)">
+                                <el-input v-model="filter_index.minute_rise" style="width: 50px"
+                                          placeholder="1"></el-input>
+                            </el-form-item>
+                            <el-form-item label="分钟跌(%)">
+                                <el-input v-model="filter_index.minute_fall" style="width: 50px"
+                                          placeholder="-2"></el-input>
+                            </el-form-item>
+
+                        </el-form>
+                    </div>
+                </el-card>
 
 
-                <el-form-item label="差价(%)">
-                    <el-input v-model="filter_index.gap_price" style="width: 50px" placeholder="2"></el-input>
-                </el-form-item>
-                <el-form-item label="瞬涨(%)">
-                    <el-input v-model="filter_index.instant_rise" style="width: 50px" placeholder="1"></el-input>
-                </el-form-item>
-                <el-form-item label="瞬跌(%)">
-                    <el-input v-model="filter_index.instant_fall" style="width: 50px" placeholder="-2"></el-input>
-                </el-form-item>
-                <el-form-item label="分钟涨(%)">
-                    <el-input v-model="filter_index.minute_rise" style="width: 50px" placeholder="1"></el-input>
-                </el-form-item>
-                <el-form-item label="分钟跌(%)">
-                    <el-input v-model="filter_index.minute_fall" style="width: 50px" placeholder="-2"></el-input>
-                </el-form-item>
+            </el-drawer>
 
-            </el-form>
         </el-header>
 
 
@@ -94,14 +128,17 @@
         data() {
             return {
                 tableData: [],
+                drawer: false,
+                direction: 'rtl',
                 filter_index: {
                     gap_price: 2,
                     instant_rise: 1,
                     instant_fall: -2,
                     minute_rise: 1,
                     minute_fall: -2,
-                    raise_fall_zone_rise:2,
-                    raise_fall_zone_fall:-1,
+                    raise_fall_zone_rise: 2,
+                    raise_fall_zone_fall: -1,
+                    how_many_minute: '1',
                 },
 
             }
@@ -155,19 +192,24 @@
 
                 // e这个变量就是后台传回的数据，在这个函数里面可以进行处理传回的值
                 var basic_info_array = e.data.split('^');
-                var current_price =  basic_info_array[4];
+                var current_price = basic_info_array[4];
                 var current_event = basic_info_array[7];
                 var current_value = basic_info_array[8];
                 var current_rise_fall_str = basic_info_array[6];
                 var current_rise_fall = parseFloat(current_rise_fall_str);
 
-                if (parseFloat(current_price) < 2){
+                if (parseFloat(current_price) < 2) {
                     return;
                 }
-                if (current_rise_fall > this.filter_index.raise_fall_zone_rise || current_rise_fall <this.filter_index.raise_fall_zone_fall){
+                if (current_rise_fall > this.filter_index.raise_fall_zone_rise || current_rise_fall < this.filter_index.raise_fall_zone_fall) {
                     return
                 }
-				if (current_event.indexOf("分钟涨") !== -1) {
+
+                if (current_event.indexOf(this.filter_index.how_many_minute+"分钟") === -1){
+                    return
+                }
+
+                if (current_event.indexOf("分钟涨") !== -1) {
                     var minute_rise = parseFloat(current_value)
                     if (minute_rise < this.filter_index.minute_rise) {
                         return
@@ -199,15 +241,15 @@
                         return
                     }
                 }
-                
-				
+
+
                 this.tableData.unshift({
                     "time": basic_info_array[0] + " " + basic_info_array[1],
                     "name": basic_info_array[2],
                     "stock": basic_info_array[3],
                     "price": basic_info_array[4],
                     "volume": basic_info_array[5],
-                    "rise_fall": basic_info_array[6]+"%",
+                    "rise_fall": basic_info_array[6] + "%",
                     "filter_event": current_event,
                     "filter_value": current_value + "%"
                 })// 这边我绑定了一个data，data会在网页上显示后端传来的东西
