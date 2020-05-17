@@ -1,0 +1,10 @@
+趋势<\.sp.\>趋势<\.sp.\>截止到data，该股票代码：stocknumber，简称：stockname，当前股票价格的运行处于status状态，超买超卖指标处于area区域，向上的阻力位是hinder元，向下的支撑位是embrace元。
+趋势<\.sp.\>趋势<\.sp.\>到data收盘后，该股票代码：stocknumber，股票简称：stockname，当前价格运行处于status状态，超买超卖指标处于area区间，向上的压力位是hinder元，向下的支撑位是embrace元。
+趋势<\.sp.\>趋势<\.sp.\>到data为止，stockname呈status走势，支撑位为embrace元左右，压力位为hinder元左右，超卖超买指标在area范围内。
+趋势<\.sp.\>趋势<\.sp.\>到data交易截止，stockname目前有status的趋势，经过长时间的挤水分已经在embrace元一带形成箱底。
+趋势<\.sp.\>趋势<\.sp.\>到data收盘为止，stockname，目前价格运行的状态处于status期，下档embrace元一线构成技术支撑，上档反压区hinder元一线，依此区间自行操作。
+趋势<\.sp.\>趋势<\.sp.\>直至data，该股票代码stocknumber，股票简称stockname，整体来看近期走势status状态，建议注意高位调整处于area区域，压力位上方是hinder元左右，短线支撑位是embrace元左右。
+趋势<\.sp.\>趋势<\.sp.\>截止data，stocknumber，股票简称stockname，这只股票处于status状态，后市将企稳处于area区域，压力位是hinder元左右，短线支撑位是embrace元左右。
+趋势<\.sp.\>趋势<\.sp.\>直到data，stockname，该股处于status状态，中线到达或接近顶部处于area区域，压力位上方是hinder元左右，支撑位是embrace元左右。
+趋势<\.sp.\>趋势无压力<\.sp.\>到data收盘为止，stockname，目前价格运行的状态处于status期，下档embrace元一线构成技术支撑，上档无明显反压价位，依此区间自行操作。
+趋势<\.sp.\>趋势无支撑<\.sp.\>到data收盘为止，stockname，目前价格运行的状态处于status期，下方尚未形成有效支撑，上档反压区hinder元一线，依此区间自行操作。

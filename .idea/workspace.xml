@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="AnswerQuestionSystem" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Setup Script" />
+        <option value="Python Script" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Yi2fs8yHbiw2GRGxEJgdEidRVO" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AnswerApp/migrations" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\stock_local_dic" />
+      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\make_stock_info_dic" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\templates" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\static" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\migrations" />
+      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\assets" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\Neo4j" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\AnswerApp\from_neo4j_extract_info" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.serve">
+    <configuration name="company_name" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AnswerQuestionSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic/company_name.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="region" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AnswerQuestionSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic/region.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="writer_local_dic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AnswerQuestionSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic/writer_local_dic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AnswerQuestionSystem" type="Python.DjangoServer" factoryName="Django server">
+      <module name="AnswerQuestionSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="AnswerQuestionSystem.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/answer-system-view-vue/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/answer-system-view-vue/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.AnswerQuestionSystem" />
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.serve" />
+      <item itemvalue="Python.company_name" />
+      <item itemvalue="Python.region" />
+      <item itemvalue="Python.writer_local_dic" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.serve" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="Python.company_name" />
+        <item itemvalue="Python.company_name" />
+        <item itemvalue="Python.writer_local_dic" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@14c71a8b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="" />
+      <created>1583411200545</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583411200545</updated>
+      <workItem from="1583411201880" duration="124000" />
+      <workItem from="1583411384100" duration="43000" />
+      <workItem from="1583411579782" duration="30000" />
+      <workItem from="1583411612502" duration="6268000" />
+      <workItem from="1583567753612" duration="9690000" />
+      <workItem from="1583832186858" duration="10039000" />
+      <workItem from="1583843003004" duration="3794000" />
+      <workItem from="1583906202987" duration="3501000" />
+      <workItem from="1583915493013" duration="17524000" />
+      <workItem from="1584001398902" duration="2449000" />
+      <workItem from="1584096255378" duration="40000" />
+      <workItem from="1584103972561" duration="4114000" />
+      <workItem from="1584684260558" duration="679000" />
+      <workItem from="1585397974774" duration="4030000" />
+      <workItem from="1585672305182" duration="302000" />
+      <workItem from="1585755674776" duration="3970000" />
+      <workItem from="1585771041897" duration="1369000" />
+      <workItem from="1585806689951" duration="3842000" />
+      <workItem from="1586160376561" duration="9234000" />
+      <workItem from="1586179740086" duration="653000" />
+      <workItem from="1586180417988" duration="9406000" />
+      <workItem from="1586233068691" duration="5071000" />
+      <workItem from="1586239277318" duration="9415000" />
+      <workItem from="1586254286194" duration="7389000" />
+      <workItem from="1586261922285" duration="865000" />
+      <workItem from="1586263045837" duration="7103000" />
+      <workItem from="1586272058261" duration="6505000" />
+      <workItem from="1586321971751" duration="14680000" />
+      <workItem from="1586337755325" duration="1299000" />
+      <workItem from="1586399518860" duration="9747000" />
+      <workItem from="1586409694863" duration="18707000" />
+      <workItem from="1586432968586" duration="748000" />
+      <workItem from="1586434166172" duration="13530000" />
+      <workItem from="1586486582488" duration="3073000" />
+      <workItem from="1586493631138" duration="1099000" />
+      <workItem from="1586494759673" duration="1329000" />
+      <workItem from="1586496325687" duration="19510000" />
+      <workItem from="1586521406868" duration="335000" />
+      <workItem from="1586575916399" duration="3206000" />
+      <workItem from="1587032205661" duration="146000" />
+      <workItem from="1587032399895" duration="19951000" />
+      <workItem from="1587053559348" duration="12136000" />
+      <workItem from="1587565522036" duration="32000" />
+      <workItem from="1587571679677" duration="1362000" />
+      <workItem from="1588669822518" duration="13892000" />
+      <workItem from="1588690324681" duration="2719000" />
+      <workItem from="1588693940330" duration="320000" />
+      <workItem from="1588776170018" duration="888000" />
+      <workItem from="1589208556411" duration="3863000" />
+      <workItem from="1589212693239" duration="1147000" />
+      <workItem from="1589294804512" duration="1417000" />
+      <workItem from="1589606004080" duration="803000" />
+      <workItem from="1589706140189" duration="568000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AnswerQuestionSystem/settings.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AnswerQuestionSystem/settings.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AnswerQuestionSystem$import.coverage" NAME="import Coverage Results" MODIFIED="1586429381559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AnswerTemplatesManager/test" />
+  </component>
+</project>
