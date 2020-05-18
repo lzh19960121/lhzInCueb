@@ -247,6 +247,7 @@
                 for (let x in this.tableData){
                     if (this.tableData[x].stock === basic_info_array[3]){
                         delete this.tableData[x];
+                        break;
                     }
                 }
                 this.tableData.unshift({
