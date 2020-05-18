@@ -199,7 +199,7 @@
                 var current_value = basic_info_array[8];
                 var current_rise_fall_str = basic_info_array[6];
                 var current_rise_fall = parseFloat(current_rise_fall_str);
-
+                console.log(basic_info_array)
                 if (parseFloat(current_price) < 2) {
                     return;
                 }
