@@ -116,6 +116,7 @@
                 <el-table-column
                         prop="filter_value"
                         label="值"
+                        sortable
                 >
                 </el-table-column>
             </el-table>
