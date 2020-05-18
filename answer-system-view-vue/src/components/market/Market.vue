@@ -1,7 +1,5 @@
 <template>
     <el-container style="width:85%;alignment: center;margin: auto;">
-
-
         <el-header style="margin-top: 1%">
             <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
                 参数设置
@@ -17,61 +15,58 @@
                     <el-card class="box-card">
                         <div slot="header" class="clearfix">
                             <span>设定参数</span>
-                         </div>
+                        </div>
                         <div class="text item">
                             <el-form-item label="涨跌区间(%)：">
                                 <el-input v-model="filter_index.raise_fall_zone_fall" style="width: 50px"
                                           placeholder="-1"></el-input>
-                                <span>   < 涨跌 <   </span>
+
+                                <i class="el-icon-arrow-left"></i>
+
+                                <span>  涨跌  </span>
+                                <i class="el-icon-arrow-left"></i>
                                 <el-input v-model="filter_index.raise_fall_zone_rise" style="width: 50px"
                                           placeholder="2"></el-input>
 
                             </el-form-item>
                             <el-form-item label="价差(%)：">
-                        <span>  大于 </span>
-                        <el-input v-model="filter_index.gap_price" style="width: 50px"
-                                  placeholder="2"></el-input>
+                                <span>  大于 </span>
+                                <el-input v-model="filter_index.gap_price" style="width: 50px"
+                                          placeholder="2"></el-input>
 
-                    </el-form-item>
+                            </el-form-item>
 
 
-                    <el-form-item label="瞬涨(%): ">
-                        <span>  大于 </span>
-                        <el-input v-model="filter_index.instant_rise" style="width: 50px"
-                                  placeholder="1"></el-input>
-                    </el-form-item>
+                            <el-form-item label="瞬涨(%): ">
+                                <span>  大于 </span>
+                                <el-input v-model="filter_index.instant_rise" style="width: 50px"
+                                          placeholder="1"></el-input>
+                            </el-form-item>
 
-                    <el-form-item label="瞬跌(%)：">
-                        <span>  小于 </span>
-                        <el-input v-model="filter_index.instant_fall" style="width: 50px"
-                                  placeholder="-2"></el-input>
-                    </el-form-item>
+                            <el-form-item label="瞬跌(%)：">
+                                <span>  小于 </span>
+                                <el-input v-model="filter_index.instant_fall" style="width: 50px"
+                                          placeholder="-2"></el-input>
+                            </el-form-item>
 
-                    <el-form-item label="分钟数：">
-                        <el-input v-model="filter_index.how_many_minute" style="width: 50px"
-                                  placeholder="1"></el-input>
-                    </el-form-item>
-                    <el-form-item label="分钟涨(%)：">
-                        <span>  大于 </span>
-                        <el-input v-model="filter_index.minute_rise" style="width: 50px"
-                                  placeholder="1"></el-input>
-                    </el-form-item>
-                    <el-form-item label="分钟跌(%)：">
-                        <span>  小于 </span>
-                        <el-input v-model="filter_index.minute_fall" style="width: 50px"
-                                  placeholder="-2"></el-input>
-                    </el-form-item>
+                            <el-form-item label="分钟数：">
+                                <el-input v-model="filter_index.how_many_minute" style="width: 50px"
+                                          placeholder="1"></el-input>
+                            </el-form-item>
+                            <el-form-item label="分钟涨(%)：">
+                                <span>  大于 </span>
+                                <el-input v-model="filter_index.minute_rise" style="width: 50px"
+                                          placeholder="1"></el-input>
+                            </el-form-item>
+                            <el-form-item label="分钟跌(%)：">
+                                <span>  小于 </span>
+                                <el-input v-model="filter_index.minute_fall" style="width: 50px"
+                                          placeholder="-2"></el-input>
+                            </el-form-item>
                         </div>
                     </el-card>
-
-
-
-
                 </el-form>
-
-
             </el-drawer>
-
         </el-header>
 
 
@@ -80,7 +75,6 @@
                     :data="tableData"
                     :cell-style="tableCellClassName"
             >
-
                 <el-table-column
                         prop="time"
                         label="时间"
@@ -175,8 +169,6 @@
                 if (row.row.filter_event.indexOf('跌') !== -1) {
                     return 'color:green';
                 }
-
-
             },
 
             // 初始化websocket
@@ -252,7 +244,11 @@
                     }
                 }
 
-
+                for (let x in this.tableData){
+                    if (this.tableData[x].stock === basic_info_array[3]){
+                        delete this.tableData[x];
+                    }
+                }
                 this.tableData.unshift({
                     "time": basic_info_array[0] + " " + basic_info_array[1],
                     "name": basic_info_array[2],
