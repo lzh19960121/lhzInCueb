@@ -252,7 +252,7 @@
                           delete this.tableData[x];
                           break;
                         }else {
-                            break;
+                            return;
                         }
                     }
                 }
