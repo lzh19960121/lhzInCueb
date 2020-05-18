@@ -58,6 +58,7 @@
                     {name: '/document', navItem: '帮助文档'},
                     {name: '/template', navItem: '创作模板'},
                     {name: '/market', navItem: '行情监控'},
+                    {name: '/rank', navItem: '排行'},
                 ]
             }
         }

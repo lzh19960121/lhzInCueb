@@ -10,7 +10,7 @@ import CreateCenter from "@/components/answer_template/CreateCenter";
 import MyTemplate from "@/components/answer_template/MyTemplate";
 import EditTemplate from "@/components/answer_template/EditTemplate";
 import Market from "../components/market/Market";
-
+import Rank from "../components/rank/Rank";
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +39,14 @@ export default new Router({
                     path: '/market',
                     name: 'Market',
                     component: Market,
+                    meta: {
+                        requireAuth: false
+                    }
+                },
+                {
+                    path: '/rank',
+                    name: 'Rank',
+                    component: Rank,
                     meta: {
                         requireAuth: false
                     }

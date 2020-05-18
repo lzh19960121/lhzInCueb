@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/admin/Admin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/admin/Admin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/common/NavMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/common/NavMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/router/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +68,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/AnswerApp/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/answer-system-view-vue/src/components/rank" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -78,19 +78,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\components\rank" />
+      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\migrations" />
+      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\assets" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\Neo4j" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\stock_local_dic" />
       <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\make_stock_info_dic" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\templates" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\static" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\migrations" />
-      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp" />
-      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\assets" />
-      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\Neo4j" />
-      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\AnswerApp\from_neo4j_extract_info" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -317,6 +317,7 @@
       <workItem from="1589764678946" duration="2909000" />
       <workItem from="1589771869142" duration="3884000" />
       <workItem from="1589779361244" duration="286000" />
+      <workItem from="1589780382763" duration="291000" />
     </task>
     <servers />
   </component>
