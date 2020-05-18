@@ -251,6 +251,8 @@
                         if(this.tableData[x].filter_value <= parseFloat(current_value)){
                           delete this.tableData[x];
                           break;
+                        }else {
+                            break;
                         }
                     }
                 }
