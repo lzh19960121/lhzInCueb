@@ -6,9 +6,11 @@
             </el-button>
 
             <el-drawer
+
                     :visible.sync="drawer"
                     :direction="direction"
             >
+
                 <el-form v-model="filter_index" style="text-align: left;margin: 5%">
                     <el-card class="box-card">
                         <div slot="header" class="clearfix">
@@ -72,6 +74,7 @@
             <el-table
                     :data="tableData"
                     :cell-style="tableCellClassName"
+                    :default-sort = "{prop: 'filter_value', order: 'descending'}"
             >
                 <el-table-column
                         prop="time"
@@ -109,13 +112,12 @@
                 <el-table-column
                         prop="filter_event"
                         label="事件"
-                        :formatter="formatRole"
                 ></el-table-column>
                 <el-table-column
                         prop="filter_value"
                         label="值"
+                        sortable
                 >
-
                 </el-table-column>
                 <el-table-column
                         prop="filter_times"
@@ -314,4 +316,3 @@
         }
     }
 </script>
-

@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/FilterEvent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TextRnnModel/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/TextRnnModel/predict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/rank/Rank.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Rank.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-market-server/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-market-server/server_ui_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/server_ui_auto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-market-server/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,19 +86,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\components\market" />
+      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\stock_local_dic" />
+      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\make_stock_info_dic" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\templates" />
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\components\rank" />
       <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\migrations" />
       <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\assets" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\Neo4j" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\stock_local_dic" />
-      <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\make_stock_info_dic" />
-      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\templates" />
-      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\static" />
-      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -104,7 +113,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="Python.filter">
     <configuration name="company_name" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AnswerQuestionSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="region" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="filter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AnswerQuestionSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -135,14 +144,14 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stock-market-server" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic/region.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stock-market-server/filter.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -220,16 +229,16 @@
       <item itemvalue="npm.build" />
       <item itemvalue="npm.serve" />
       <item itemvalue="Python.company_name" />
-      <item itemvalue="Python.region" />
       <item itemvalue="Python.writer_local_dic" />
+      <item itemvalue="Python.filter" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.filter" />
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.build" />
         <item itemvalue="Python.company_name" />
         <item itemvalue="Python.company_name" />
-        <item itemvalue="Python.writer_local_dic" />
       </list>
     </recent_temporary>
   </component>
@@ -319,7 +328,7 @@
       <workItem from="1589780382763" duration="527000" />
       <workItem from="1589780960163" duration="1524000" />
       <workItem from="1589850809844" duration="11328000" />
-      <workItem from="1589868081610" duration="2929000" />
+      <workItem from="1589868081610" duration="22798000" />
     </task>
     <servers />
   </component>
@@ -352,15 +361,11 @@
           <line>45</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/stock-market-server/filter.py</url>
-          <line>166</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AnswerQuestionSystem$filter.coverage" NAME="filter Coverage Results" MODIFIED="1589898847715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock-market-server" />
     <SUITE FILE_PATH="coverage/AnswerQuestionSystem$import.coverage" NAME="import Coverage Results" MODIFIED="1586429381559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AnswerTemplatesManager/test" />
   </component>
 </project>

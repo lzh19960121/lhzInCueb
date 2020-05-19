@@ -243,10 +243,9 @@ class Ui_MainWindow(object):
     def check_need_running(self):
         
         while True:
-       
             time.sleep(3)
             d_time = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '9:22', '%Y-%m-%d%H:%M')
-            d_time1 = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '15:02', '%Y-%m-%d%H:%M')
+            d_time1 = datetime.datetime.strptime(str(datetime.datetime.now().date()) + '15:10', '%Y-%m-%d%H:%M')
             n_time = datetime.datetime.now()
             
             # 判断当前时间是否在范围时间内
@@ -259,7 +258,6 @@ class Ui_MainWindow(object):
                    
             else:
                 self.label_7.setText("不在交易时间范围内")
-                
                 if self.new_filter is not None:
                     self.new_filter.filter_flag = False
                     self.listWidget_ip.addItem("不在开盘时间，停止今日监控")

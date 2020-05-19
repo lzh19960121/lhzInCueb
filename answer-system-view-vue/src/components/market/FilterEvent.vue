@@ -1,80 +1,13 @@
 <template>
     <el-container style="width:85%;alignment: center;margin: auto;">
         <el-header style="margin-top: 1%">
-            <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
-                参数设置
-            </el-button>
 
-            <el-drawer
-
-                    :visible.sync="drawer"
-                    :direction="direction"
-            >
-
-                <el-form v-model="filter_index" style="text-align: left;margin: 5%">
-                    <el-card class="box-card">
-                        <div slot="header" class="clearfix">
-                            <span>设定参数</span>
-                        </div>
-                        <div class="text item">
-                            <el-form-item label="涨跌区间(%)：">
-                                <el-input v-model="filter_index.raise_fall_zone_fall" style="width: 50px"
-                                          placeholder="-1"></el-input>
-
-                                <i class="el-icon-arrow-left"></i>
-
-                                <span>  涨跌  </span>
-                                <i class="el-icon-arrow-left"></i>
-                                <el-input v-model="filter_index.raise_fall_zone_rise" style="width: 50px"
-                                          placeholder="2"></el-input>
-
-                            </el-form-item>
-                            <el-form-item label="价差(%)：">
-                                <span>  大于 </span>
-                                <el-input v-model="filter_index.gap_price" style="width: 50px"
-                                          placeholder="2"></el-input>
-
-                            </el-form-item>
-
-
-                            <el-form-item label="瞬涨(%): ">
-                                <span>  大于 </span>
-                                <el-input v-model="filter_index.instant_rise" style="width: 50px"
-                                          placeholder="1"></el-input>
-                            </el-form-item>
-
-                            <el-form-item label="瞬跌(%)：">
-                                <span>  小于 </span>
-                                <el-input v-model="filter_index.instant_fall" style="width: 50px"
-                                          placeholder="-2"></el-input>
-                            </el-form-item>
-
-                            <el-form-item label="分钟数：">
-                                <el-input v-model="filter_index.how_many_minute" style="width: 50px"
-                                          placeholder="1"></el-input>
-                            </el-form-item>
-                            <el-form-item label="分钟涨(%)：">
-                                <span>  大于 </span>
-                                <el-input v-model="filter_index.minute_rise" style="width: 50px"
-                                          placeholder="1"></el-input>
-                            </el-form-item>
-                            <el-form-item label="分钟跌(%)：">
-                                <span>  小于 </span>
-                                <el-input v-model="filter_index.minute_fall" style="width: 50px"
-                                          placeholder="-2"></el-input>
-                            </el-form-item>
-                        </div>
-                    </el-card>
-                </el-form>
-            </el-drawer>
         </el-header>
-
 
         <el-main>
             <el-table
                     :data="tableData"
                     :cell-style="tableCellClassName"
-                    :default-sort = "{prop: 'filter_value', order: 'descending'}"
             >
                 <el-table-column
                         prop="time"
@@ -112,12 +45,13 @@
                 <el-table-column
                         prop="filter_event"
                         label="事件"
+                        :formatter="formatRole"
                 ></el-table-column>
                 <el-table-column
                         prop="filter_value"
                         label="值"
-                        sortable
                 >
+
                 </el-table-column>
                 <el-table-column
                         prop="filter_times"
@@ -166,8 +100,26 @@
         methods: {
             start_filter() {
                 this.initWebSocket()
-            },
 
+            },
+            formatRole: function (row, column) {
+                if (row.filter_event === '1') {
+                    return "价差"
+                }
+                if (row.filter_event === '2') {
+                    return "瞬涨"
+                }
+                if (row.filter_event === '3') {
+                    return "瞬跌"
+                }
+                if (row.filter_event.indexOf('4')!==-1) {
+                    return row.filter_event.substr(1, 2) + "分钟涨"
+                }
+                if (row.filter_event.indexOf('5')!==-1) {
+                    return row.filter_event.substr(1, 2) + "分钟跌"
+                }
+
+            },
             tableCellClassName(row, column, rowIndex, columnIndex) {
 
                 if (row.row.filter_event.indexOf('涨') !== -1) {
@@ -189,6 +141,7 @@
             },
             // 连接建立成功的信号
             websocketOnOpen() {
+
                 console.log('初始化成功')// 连接成功后就可以在这里写一些回调函数了
             },
             // 连接建立失败重连
@@ -200,65 +153,73 @@
             websocketOnMessage(e) {
 
                 // e这个变量就是后台传回的数据，在这个函数里面可以进行处理传回的值
-                let basic_info_array = e.data.replace(/\s+/g,"").split('^');
-                let current_price = basic_info_array[4];
-                let current_event = basic_info_array[7];
-                let current_value = basic_info_array[8];
-                let current_rise_fall_str = basic_info_array[6];
-                let current_rise_fall = parseFloat(current_rise_fall_str);
+                var basic_info_array = e.data.replace(/\s+/g, "").split('^');
+                var current_price = basic_info_array[4];
+                var current_event = basic_info_array[7];
+                var current_value = basic_info_array[8];
+                var current_rise_fall_str = basic_info_array[6];
+                var current_rise_fall = parseFloat(current_rise_fall_str);
 
                 if (parseFloat(current_price) < 2) {
                     return;
                 }
-                // 是否在涨跌区间
                 if (current_rise_fall > this.filter_index.raise_fall_zone_rise || current_rise_fall < this.filter_index.raise_fall_zone_fall) {
                     return
                 }
-                // 几分钟涨跌
-                if (current_event.indexOf(this.filter_index.how_many_minute + "分钟") === -1) {
+                // gap_price_type = "1"
+                //     instant_rise = '2'
+                //     instant_fall = '3'
+
+                //     minute_fall = '5'
+                if (current_event !== "5" + (this.filter_index.how_many_minute)) {
                     return
                 }
-                // 涨跌速度
-                if (current_event.indexOf("分钟涨") !== -1) {
-                    let minute_rise = parseFloat(current_value)
+
+                if (current_event !== "4" + (this.filter_index.how_many_minute)) {
+                    return
+                }
+                 // minute_rise = '4'
+                if (current_event === '4') {
+                    var minute_rise = parseFloat(current_value);
                     if (minute_rise < this.filter_index.minute_rise) {
                         return
                     }
                 }
-                if (current_event.indexOf("分钟跌") !== -1) {
-                    let minute_fall = parseFloat(current_value)
+                if (current_event === '5') {
+                    var minute_fall = parseFloat(current_value);
                     if (minute_fall > this.filter_index.minute_fall) {
                         return
                     }
                 }
-                if (current_event.indexOf("价差") !== -1) {
-                    let gap_price = parseFloat(current_value);
+                if (current_event === "1") {
+                    var gap_price = parseFloat(current_value);
                     if (gap_price < this.filter_index.gap_price) {
                         return
                     }
                 }
 
-                if (current_event.indexOf("瞬涨") !== -1) {
-                    let instant_rise = parseFloat(current_value)
+                if (current_event === "2") {
+                    var instant_rise = parseFloat(current_value);
                     if (instant_rise < this.filter_index.instant_rise) {
                         return
                     }
                 }
-                if (current_event.indexOf("瞬跌") !== -1) {
-                    let instant_fall = parseFloat(current_value)
+
+                if (current_event === "3") {
+                    var instant_fall = parseFloat(current_value);
                     if (instant_fall > this.filter_index.instant_fall) {
                         return
                     }
                 }
-                console.log(current_event.substr(0,2))
-                // 查看是否有同样类型的记录
-                for (let x in this.tableData){
-                    if ((this.tableData[x].stock === basic_info_array[3]) && (this.tableData[x].filter_event.indexOf(current_event.substr(0,2)) !== -1)){
-                        delete this.tableData[x];
-                        break;
+
+                for (let x in this.tableData) {
+                    if (this.tableData[x].stock === basic_info_array[3]) {
+                        if (this.tableData[x].filter_event === current_event) {
+                            delete this.tableData[x];
+                            break;
+                        }
                     }
                 }
-
                 this.tableData.unshift({
                     "time": basic_info_array[0] + " " + basic_info_array[1],
                     "name": basic_info_array[2],
@@ -267,8 +228,8 @@
                     "volume": basic_info_array[5],
                     "rise_fall": basic_info_array[6] + "%",
                     "filter_event": current_event,
-                    "filter_value":  parseFloat(current_value),
-                    "filter_times":basic_info_array[9]
+                    "filter_value": current_value + "%",
+                    "filter_times": basic_info_array[9]
                 })// 这边我绑定了一个data，data会在网页上显示后端传来的东西
 
 

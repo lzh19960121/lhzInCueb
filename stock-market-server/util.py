@@ -2,18 +2,23 @@ import os
 import datetime
 from functools import reduce
 
+
 def get_today_date():
     return datetime.datetime.now().strftime('%Y%m%d')
+
 
 def get_today_time():
     return datetime.datetime.now().strftime('%Y-%m-%d')
 
+
 def get_time_ymd_hms():
     return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
 
 def StrToFloat(s):
     l = s.split('.')
     return reduce(lambda x, y: int(x) + int(y) / 10 ** len(y), l)
+
 
 def write_text_apend(file_name, content):
     """
@@ -27,6 +32,7 @@ def write_text_apend(file_name, content):
         f.writelines(content)
         f.writelines("\n")
         f.close()
+
 
 def get_all_path(dirname: str, file_filter: str):
     """
@@ -59,4 +65,3 @@ def read_one_file(path: str, code: str):
         lines = [line.strip() for line in f.readlines()]
         f.close()
         return lines  # type:list[str]
-

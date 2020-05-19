@@ -10,7 +10,7 @@ import CreateCenter from "@/components/answer_template/CreateCenter";
 import MyTemplate from "@/components/answer_template/MyTemplate";
 import EditTemplate from "@/components/answer_template/EditTemplate";
 import Market from "../components/market/Market";
-import Rank from "../components/rank/Rank";
+import Rank from "../components/market/Rank";
 Vue.use(Router)
 
 export default new Router({
