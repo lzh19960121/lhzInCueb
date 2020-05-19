@@ -369,11 +369,10 @@ class Filter(object):
 
     def cal_times(self):
         for one in self.rise_fall_times:
-            mysql.cud("INSERT INTO `filter_result`.`result` (`content`) VALUES (?)",
-                      one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
+            util.write_text_apend(r"C:\Users\hangqing1\Desktop"+r"\\"+util.get_today_date(), one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
             for one_e in one.events:
-                mysql.cud("INSERT INTO `filter_result`.`result` (`content`) VALUES (?)",
-                          one_e)
+                util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
+                                      one_e)
 
         print("打印统计次数")
 
@@ -519,4 +518,3 @@ class Filter(object):
     #             time.sleep(30)
     #         except Exception as e:
     #             print(e)
-mysql.cud("INSERT INTO `filter_result`.`result` (`content`) VALUES (?)","das")
