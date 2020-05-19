@@ -195,60 +195,59 @@
             websocketOnMessage(e) {
 
                 // e这个变量就是后台传回的数据，在这个函数里面可以进行处理传回的值
-                var basic_info_array = e.data.split('^');
-
-                var current_price = basic_info_array[4];
-                var current_event = basic_info_array[7];
-                var current_value = basic_info_array[8];
-                var current_rise_fall_str = basic_info_array[6];
-                var current_rise_fall = parseFloat(current_rise_fall_str);
+                let basic_info_array = e.data.replace(/\s+/g,"").split('^');
+                let current_price = basic_info_array[4];
+                let current_event = basic_info_array[7];
+                let current_value = basic_info_array[8];
+                let current_rise_fall_str = basic_info_array[6];
+                let current_rise_fall = parseFloat(current_rise_fall_str);
 
                 if (parseFloat(current_price) < 2) {
                     return;
                 }
+                // 是否在涨跌区间
                 if (current_rise_fall > this.filter_index.raise_fall_zone_rise || current_rise_fall < this.filter_index.raise_fall_zone_fall) {
                     return
                 }
-
+                // 几分钟涨跌
                 if (current_event.indexOf(this.filter_index.how_many_minute + "分钟") === -1) {
                     return
                 }
-
+                // 涨跌速度
                 if (current_event.indexOf("分钟涨") !== -1) {
-                    var minute_rise = parseFloat(current_value)
+                    let minute_rise = parseFloat(current_value)
                     if (minute_rise < this.filter_index.minute_rise) {
                         return
                     }
                 }
                 if (current_event.indexOf("分钟跌") !== -1) {
-                    var minute_fall = parseFloat(current_value)
+                    let minute_fall = parseFloat(current_value)
                     if (minute_fall > this.filter_index.minute_fall) {
                         return
                     }
                 }
                 if (current_event.indexOf("价差") !== -1) {
-                    var gap_price = parseFloat(current_value);
-
+                    let gap_price = parseFloat(current_value);
                     if (gap_price < this.filter_index.gap_price) {
                         return
                     }
                 }
 
                 if (current_event.indexOf("瞬涨") !== -1) {
-                    var instant_rise = parseFloat(current_value)
+                    let instant_rise = parseFloat(current_value)
                     if (instant_rise < this.filter_index.instant_rise) {
                         return
                     }
                 }
                 if (current_event.indexOf("瞬跌") !== -1) {
-                    var instant_fall = parseFloat(current_value)
+                    let instant_fall = parseFloat(current_value)
                     if (instant_fall > this.filter_index.instant_fall) {
                         return
                     }
                 }
-
+                // 查看是否有同样类型的记录
                 for (let x in this.tableData){
-                    if (this.tableData[x].stock === basic_info_array[3]){
+                    if ((this.tableData[x].stock === basic_info_array[3]) && (this.tableData[x].filter_event.indexOf(current_event.substr(0,1)) !== -1)){
                         delete this.tableData[x];
                         break;
                     }

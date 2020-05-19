@@ -245,7 +245,8 @@
                 }
 
                 for (let x in this.tableData){
-                    if (this.tableData[x].stock === basic_info_array[3]){
+                    if ((this.tableData[x].stock === basic_info_array[3]) &&
+                        (this.tableData[x].filter_event.indexOf(current_event.substr(0,1)) !== -1)){
                         delete this.tableData[x];
                         break;
                     }
