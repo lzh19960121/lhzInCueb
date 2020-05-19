@@ -249,7 +249,7 @@
                         return
                     }
                 }
-                console.log(current_event.substr(0,1)))
+                console.log(current_event.substr(0,1))
                 for (let x in this.tableData){
                     if ((this.tableData[x].stock === basic_info_array[3]) &&
                         (this.tableData[x].filter_event.indexOf(current_event.substr(0,1)) !== -1)){
