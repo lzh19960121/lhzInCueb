@@ -205,7 +205,7 @@
                 var current_value = basic_info_array[8];
                 var current_rise_fall_str = basic_info_array[6];
                 var current_rise_fall = parseFloat(current_rise_fall_str);
-                console.log(basic_info_array)
+               
                 if (parseFloat(current_price) < 2) {
                     return;
                 }
@@ -249,12 +249,16 @@
                         return
                     }
                 }
-                console.log(current_event.substr(0,1))
+
                 for (let x in this.tableData){
-                    if ((this.tableData[x].stock === basic_info_array[3]) &&
-                        (this.tableData[x].filter_event.indexOf(current_event.substr(0,2)) !== -1)){
-                        delete this.tableData[x];
+                    if (this.tableData[x].stock === basic_info_array[3]){
+                        if(this.tableData[x].filter_event.indexOf(current_event.substr(0,2)) !== -1){
+                            console.log(current_event.substr(0,2))
+                            console.log(this.tableData[x].filter_event)
+                            delete this.tableData[x];
                         break;
+                        }
+
                     }
                 }
                 this.tableData.unshift({
