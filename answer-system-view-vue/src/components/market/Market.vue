@@ -199,7 +199,7 @@
             websocketOnMessage(e) {
 
                 // e这个变量就是后台传回的数据，在这个函数里面可以进行处理传回的值
-                var basic_info_array = e.data.split('^');
+                var basic_info_array = e.data.replace(/\s+/g,"").split('^');
                 var current_price = basic_info_array[4];
                 var current_event = basic_info_array[7];
                 var current_value = basic_info_array[8];
