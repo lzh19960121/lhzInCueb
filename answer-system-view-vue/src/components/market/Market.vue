@@ -242,6 +242,8 @@
                     if (instant_rise < this.filter_index.instant_rise) {
                         return
                     }
+                    console.log(current_event)
+                    console.log(current_value)
                 }
                 if (current_event.indexOf("瞬跌") !== -1) {
                     var instant_fall = parseFloat(current_value)
