@@ -116,6 +116,12 @@
                         prop="filter_value"
                         label="值"
                 >
+
+                </el-table-column>
+                <el-table-column
+                        prop="filter_times"
+                        label="次数"
+                >
                 </el-table-column>
             </el-table>
         </el-main>
@@ -243,7 +249,7 @@
                         return
                     }
                 }
-
+                console.log(current_event.substr(0,1)))
                 for (let x in this.tableData){
                     if ((this.tableData[x].stock === basic_info_array[3]) &&
                         (this.tableData[x].filter_event.indexOf(current_event.substr(0,1)) !== -1)){
@@ -259,7 +265,8 @@
                     "volume": basic_info_array[5],
                     "rise_fall": basic_info_array[6] + "%",
                     "filter_event": current_event,
-                    "filter_value": current_value + "%"
+                    "filter_value": current_value + "%",
+                    "filter_times":basic_info_array[9]
                 })// 这边我绑定了一个data，data会在网页上显示后端传来的东西
 
 
