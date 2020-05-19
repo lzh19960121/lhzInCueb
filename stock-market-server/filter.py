@@ -187,7 +187,7 @@ class Filter(object):
             time_str, stock_num, sale_price, buy_price = one_gap_dif.split(',')
             gap_price_result = self.gap_price_cal(float(sale_price), float(buy_price))
             if gap_price_result is not False:
-                gap_result = time_str + "      价差  ^  " + str(format(gap_price_result, '.2f'))+"^"+str(1)
+                gap_result = time_str + "      价差  ^  " + str(format(gap_price_result, '.2f')) + "^" + str(1)
                 self.server.send_message_to_all(gap_result)
                 self.filter_result.append(gap_result)
 
@@ -200,13 +200,13 @@ class Filter(object):
             if instant_rise_or_fall_result is not False:
                 if instant_rise_or_fall_result > 0:
                     instant_rise_result = time_str + "     瞬涨^    " + str(
-                        format(instant_rise_or_fall_result, '.2f'))+"^"+str(1)
+                        format(instant_rise_or_fall_result, '.2f')) + "^" + str(1)
                     self.server.send_message_to_all(
                         instant_rise_result)
                     self.filter_result.append(instant_rise_result)
                 else:
                     instant_fall_result = time_str + "     瞬跌^     " + str(
-                        format(instant_rise_or_fall_result, '.2f'))+"^"+str(1)
+                        format(instant_rise_or_fall_result, '.2f')) + "^" + str(1)
                     self.server.send_message_to_all(instant_fall_result)
                     self.filter_result.append(instant_fall_result)
 
@@ -218,13 +218,14 @@ class Filter(object):
             if minute_raise_or_fall_result is not False:
                 if dif > 0:
                     times = self.update_minute_rise_times(minute_name, stock_num)
-                    minute_rise_result = time_str + minute_name + "分钟涨^    " + str(format(dif, '.2f')) + "^" + str(times)
+                    minute_rise_result = time_str + minute_name + "分钟涨^    " + str(format(dif, '.2f')) + "^" + str(
+                        times)
                     self.server.send_message_to_all(
                         minute_rise_result)
                     self.filter_result.append(minute_rise_result)
 
                 else:
-                    minute_fall_result = time_str + minute_name + "分钟跌^     " + str(format(dif, '.2f'))+"^" + str(1)
+                    minute_fall_result = time_str + minute_name + "分钟跌^     " + str(format(dif, '.2f')) + "^" + str(1)
                     self.server.send_message_to_all(minute_fall_result)
                     self.filter_result.append(minute_fall_result)
 
@@ -399,7 +400,6 @@ class Filter(object):
             try:
                 time.sleep(300)
                 self.five_minute_begin_price = self.record_minute_begin()
-
             except Exception as e:
                 print(e)
 
