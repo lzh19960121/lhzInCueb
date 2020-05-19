@@ -414,9 +414,12 @@ class Filter(object):
 
             try:
                 if count1 == 60:
+                    start_tm = datetime.datetime.now()
                     self.minute_begin_price = self.record_minute_begin()
                     for one in self.rise_fall_times:
                         one.one_minute_times_be_zero()
+                    end_tm = datetime.datetime.now()
+                    print((end_tm - start_tm).seconds)
                     count1 = 0
                 elif count2 == 120:
                     self.two_minute_begin_price = self.record_minute_begin()
