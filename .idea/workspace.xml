@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AnswerQuestionSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AnswerQuestionSystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/rank/Rank.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/rank/Rank.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-market-server/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/filter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +64,7 @@
   <component name="ProjectId" id="1Yi2fs8yHbiw2GRGxEJgdEidRVO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -319,7 +320,7 @@
       <workItem from="1589779361244" duration="286000" />
       <workItem from="1589780382763" duration="527000" />
       <workItem from="1589780960163" duration="1524000" />
-      <workItem from="1589850809844" duration="6005000" />
+      <workItem from="1589850809844" duration="10379000" />
     </task>
     <servers />
   </component>
