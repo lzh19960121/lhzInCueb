@@ -176,20 +176,20 @@
                 if (row.filter_event === '3') {
                     return "瞬跌"
                 }
-                if (row.filter_event.indexOf('4') !== -1) {
+                if (row.filter_event.indexOf('4')!==-1) {
                     return row.filter_event.substr(1, 2) + "分钟涨"
                 }
-                if (row.filter_event.indexOf('5') !== -1) {
+                if (row.filter_event.indexOf('5')!==-1) {
                     return row.filter_event.substr(1, 2) + "分钟跌"
                 }
 
             },
             tableCellClassName(row, column, rowIndex, columnIndex) {
 
-                if (row.row.filter_event.indexOf('4') !== -1) {
+                if (row.row.filter_event.indexOf('涨') !== -1) {
                     return 'color:red';
                 }
-                if (row.row.filter_event.indexOf('5') !== -1) {
+                if (row.row.filter_event.indexOf('跌') !== -1) {
                     return 'color:green';
                 }
             },
@@ -235,23 +235,21 @@
                 //     instant_fall = '3'
 
                 //     minute_fall = '5'
+                if (current_event !== "5" + (this.filter_index.how_many_minute)) {
+                    return
+                }
 
-
-                // minute_rise = '4'
+                if (current_event !== "4" + (this.filter_index.how_many_minute)) {
+                    return
+                }
+                 // minute_rise = '4'
                 if (current_event.indexOf('4') !== -1) {
-                    console.log(current_event !== "4" + (this.filter_index.how_many_minute))
-                    if (current_event !== "4" + (this.filter_index.how_many_minute)) {
-                        return
-                    }
                     var minute_rise = parseFloat(current_value);
                     if (minute_rise < this.filter_index.minute_rise) {
                         return
                     }
                 }
-                if (current_event.indexOf('5') !== -1) {
-                    if (current_event !== "5" + (this.filter_index.how_many_minute)) {
-                        return
-                    }
+                if (current_event.indexOf('5') !== -1){
                     var minute_fall = parseFloat(current_value);
                     if (minute_fall > this.filter_index.minute_fall) {
                         return
