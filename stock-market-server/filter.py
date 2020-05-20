@@ -61,50 +61,51 @@ class RiseFallTimes(object):
     five_minute_fall_times = 0
     events = []
 
-    def save_event(self, event_times):
+    def save_event(self, event_times, minutes_num):
         time_str = util.get_time_ymd_hms()
-        record = time_str + ","+self.stock_num + ","+str(event_times)
+        record = time_str + "," + self.stock_num + "," + str(event_times) + "," + str(minutes_num)
         print(record)
+        
         self.events.append(record)
 
     def one_minute_times_be_zero(self):
         if self.one_minute_rise_times != 0:
-            self.save_event(self.one_minute_rise_times)
+            self.save_event(self.one_minute_rise_times, 1)
         if self.one_minute_fall_times != 0:
-            self.save_event(self.one_minute_fall_times)
+            self.save_event(self.one_minute_fall_times, 1)
         self.one_minute_rise_times = 0
         self.one_minute_fall_times = 0
 
     def two_minute_times_be_zero(self):
         if self.two_minute_rise_times != 0:
-            self.save_event(self.two_minute_rise_times)
+            self.save_event(self.two_minute_rise_times, 2)
         if self.two_minute_fall_times != 0:
-            self.save_event(self.two_minute_fall_times)
+            self.save_event(self.two_minute_fall_times, 2)
 
         self.two_minute_rise_times = 0
         self.two_minute_fall_times = 0
 
     def three_minute_times_be_zero(self):
         if self.one_minute_rise_times != 0:
-            self.save_event(self.two_minute_rise_times)
+            self.save_event(self.two_minute_rise_times, 3)
         if self.one_minute_fall_times != 0:
-            self.save_event(self.two_minute_fall_times)
+            self.save_event(self.two_minute_fall_times, 3)
         self.three_minute_rise_times = 0
         self.three_minute_fall_times = 0
 
     def four_minute_times_be_zero(self):
         if self.four_minute_rise_times != 0:
-            self.save_event(self.four_minute_rise_times)
+            self.save_event(self.four_minute_rise_times, 4)
         if self.four_minute_fall_times != 0:
-            self.save_event(self.four_minute_fall_times)
+            self.save_event(self.four_minute_fall_times, 4)
         self.four_minute_rise_times = 0
         self.four_minute_fall_times = 0
 
     def five_minute_times_be_zero(self):
         if self.five_minute_rise_times != 0:
-            self.save_event(self.five_minute_rise_times)
+            self.save_event(self.five_minute_rise_times, 5)
         if self.five_minute_fall_times != 0:
-            self.save_event(self.five_minute_fall_times)
+            self.save_event(self.five_minute_fall_times, 5)
         self.five_minute_rise_times = 0
         self.five_minute_fall_times = 0
 
