@@ -177,7 +177,7 @@
                     return "瞬跌"
                 }
                 if (row.filter_event.indexOf('4')!==-1) {
-                    console.log(row.filter_event.substr(1, 2))
+
                     return row.filter_event.substr(1, 2) + "分钟涨"
                 }
                 if (row.filter_event.indexOf('5')!==-1) {
@@ -233,19 +233,20 @@
                 }
 
                  // minute_rise = '4'
-                if (current_event.indexOf('4') !== -1) {
-                    // if (current_event !== "4" + (this.filter_index.how_many_minute)) {
-                    // return
-                    // }
+                if (current_event.substring(0,1)==='4') {
+                    if (current_event !== "4" + (this.filter_index.how_many_minute)) {
+                        return
+                    }
+
                     var minute_rise = parseFloat(current_value);
                     if (minute_rise < this.filter_index.minute_rise) {
                         return
                     }
                 }
-                if (current_event.indexOf('5')!== -1) {
-                    // if (current_event !== "5" + (this.filter_index.how_many_minute)) {
-                    //     return
-                    // }
+                if (current_event.substring(0,1)==='5') {
+                    if (current_event !== "5" + (this.filter_index.how_many_minute)) {
+                        return
+                    }
                     var minute_fall = parseFloat(current_value);
                     if (minute_fall > this.filter_index.minute_fall) {
                         return
