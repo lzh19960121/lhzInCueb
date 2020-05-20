@@ -308,7 +308,7 @@ class Filter(object):
                         format(instant_rise_or_fall_result, '.2f')) + "^" + str(times)
                 else:
                     times = self.update_instant_fall_times(stock_num)
-                    instant_result = time_str + self.filter_event_config.instant_fall + self.filter_event_config.instant_rise + "^" + str(
+                    instant_result = time_str + self.filter_event_config.instant_fall  + "^" + str(
                         format(instant_rise_or_fall_result, '.2f')) + "^" + str(times)
                 self.server.send_message_to_all(instant_result)
                 self.filter_result.append(instant_result)

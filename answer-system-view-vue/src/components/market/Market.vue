@@ -177,6 +177,7 @@
                     return "瞬跌"
                 }
                 if (row.filter_event.indexOf('4')!==-1) {
+                    console.log(row.filter_event.substr(1, 2))
                     return row.filter_event.substr(1, 2) + "分钟涨"
                 }
                 if (row.filter_event.indexOf('5')!==-1) {
@@ -186,12 +187,12 @@
             },
             tableCellClassName(row, column, rowIndex, columnIndex) {
 
-                // if (row.row.filter_event.indexOf('涨') !== -1) {
-                //     return 'color:red';
-                // }
-                // if (row.row.filter_event.indexOf('跌') !== -1) {
-                //     return 'color:green';
-                // }
+                if (row.row.filter_times > 0 ) {
+                    return 'color:red';
+                }
+                if (row.row.filter_times < 0 ) {
+                    return 'color:green';
+                }
             },
 
             // 初始化websocket
@@ -230,7 +231,6 @@
                 if (current_rise_fall > this.filter_index.raise_fall_zone_rise || current_rise_fall < this.filter_index.raise_fall_zone_fall) {
                     return
                 }
-
 
                  // minute_rise = '4'
                 if (current_event.indexOf('4') !== -1) {
