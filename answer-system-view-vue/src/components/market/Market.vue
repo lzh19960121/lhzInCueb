@@ -186,10 +186,10 @@
             },
             tableCellClassName(row, column, rowIndex, columnIndex) {
 
-                if (row.row.filter_times > 0) {
+                if (row.row.filter_event.indexOf('4') !== -1) {
                     return 'color:red';
                 }
-                if (row.row.filter_times< 0) {
+                if (row.row.filter_event.indexOf('5') !== -1) {
                     return 'color:green';
                 }
             },
@@ -235,10 +235,12 @@
                 //     instant_fall = '3'
 
                 //     minute_fall = '5'
+
+
                 // minute_rise = '4'
                 if (current_event.indexOf('4') !== -1) {
-                    console.log("4" + (this.filter_index.how_many_minute))
-                    if (current_event !== ("4" + (this.filter_index.how_many_minute))) {
+                    console.log(current_event !== "4" + (this.filter_index.how_many_minute))
+                    if (current_event !== "4" + (this.filter_index.how_many_minute)) {
                         return
                     }
                     var minute_rise = parseFloat(current_value);
