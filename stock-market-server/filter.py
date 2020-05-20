@@ -65,7 +65,7 @@ class RiseFallTimes(object):
         time_str = util.get_time_ymd_hms()
         record = time_str + "," + self.stock_num + "," + str(event_times) + "," + str(minutes_num)
         print(record)
-        
+
         self.events.append(record)
 
     def one_minute_times_be_zero(self):
@@ -426,9 +426,12 @@ class Filter(object):
         while self.filter_flag:
             try:
                 time.sleep(240)
+                oldtime = datetime.datetime.now()
                 self.four_minute_begin_price = self.record_minute_begin()
                 for one in self.rise_fall_times:
                     one.four_minute_times_be_zero()
+                newtime = datetime.datetime.now()
+                print(u'四分钟的处理时间相差：%s微秒' % (newtime - oldtime).microseconds)
             except Exception as e:
                 print(e)
 
@@ -436,9 +439,12 @@ class Filter(object):
         while self.filter_flag:
             try:
                 time.sleep(300)
+                oldtime = datetime.datetime.now()
                 self.five_minute_begin_price = self.record_minute_begin()
                 for one in self.rise_fall_times:
                     one.five_minute_times_be_zero()
+                newtime = datetime.datetime.now()
+                print(u'5分钟的处理时间相差：%s微秒' % (newtime - oldtime).microseconds)
             except Exception as e:
                 print(e)
 
