@@ -64,8 +64,6 @@ class RiseFallTimes(object):
     def save_event(self, event_times, minutes_num):
         time_str = util.get_time_ymd_hms()
         record = time_str + "," + self.stock_num + "," + str(event_times) + "," + str(minutes_num)
-        print(record)
-
         self.events.append(record)
 
     def one_minute_times_be_zero(self):
@@ -325,12 +323,12 @@ class Filter(object):
                     times = self.update_minute_rise_times(minute_name, stock_num)
                     minute_result = time_str + self.filter_event_config.minute_rise + minute_name + "^" + str(
                         format(dif, '.2f')) + "^" + str(times)
-                    print(minute_result)
+
                 else:
                     times = self.update_minute_fall_times(minute_name, stock_num)
                     minute_result = time_str + self.filter_event_config.minute_fall + minute_name + "^" + str(
                         format(dif, '.2f')) + "^" + str(times)
-                    print(minute_result)
+
                 self.server.send_message_to_all(minute_result)
                 self.filter_result.append(minute_result)
 
@@ -372,6 +370,7 @@ class Filter(object):
             self.instant_need_data.append(info_str + "," + stock_num + "," + str(price * 1000))
 
     def cal_times(self):
+        print(len(self.rise_fall_times))
         for one in self.rise_fall_times:
             util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
                                   one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
@@ -379,7 +378,6 @@ class Filter(object):
                 util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
                                       one_e)
 
-        print("打印统计次数")
 
     def record_minute_begin(self):
         minute_begin_price = {}
