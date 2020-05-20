@@ -308,7 +308,7 @@ class Filter(object):
                         format(instant_rise_or_fall_result, '.2f')) + "^" + str(times)
                 else:
                     times = self.update_instant_fall_times(stock_num)
-                    instant_result = time_str + self.filter_event_config.instant_fall  + "^" + str(
+                    instant_result = time_str + self.filter_event_config.instant_fall + "^" + str(
                         format(instant_rise_or_fall_result, '.2f')) + "^" + str(times)
                 self.server.send_message_to_all(instant_result)
                 self.filter_result.append(instant_result)
@@ -367,7 +367,7 @@ class Filter(object):
             info_str = util.get_today_time() + "^" + time_str + "^" + stock_name + '^' + stock_num + "^" + str(
                 price) + "^" + volume + "^" + str(fall_rise) + "^"
             self.gap_price_need_data.append(info_str + "," + stock_num + "," + sale_price + "," + buy_price)
-            self.instant_need_data.append(info_str + "," + stock_num + "," + str(price*1000))
+            self.instant_need_data.append(info_str + "," + stock_num + "," + str(price * 1000))
 
     def cal_times(self):
         for one in self.rise_fall_times:
@@ -454,6 +454,8 @@ class Filter(object):
         threading.Thread(target=self.update_5minute_begin_info).start()
         while self.filter_flag:
             try:
+
+                oldtime = datetime.datetime.now()
                 # 加载数据
                 self.load_info(size)
                 # 此处使用哈希求差集
@@ -470,6 +472,8 @@ class Filter(object):
                 self.pre_time_gap_price_need_data = self.gap_price_need_data
                 self.pre_time_instant_need_data = self.instant_need_data
                 self.pre_full_real_time_info = self.full_real_time_info
+                newtime = datetime.datetime.now()
+                print(u'相差：%s微秒' % (newtime - oldtime).microseconds)
                 time.sleep(2)
             except Exception as e:
                 print(e)
