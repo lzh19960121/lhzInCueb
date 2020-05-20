@@ -367,7 +367,7 @@ class Filter(object):
             info_str = util.get_today_time() + "^" + time_str + "^" + stock_name + '^' + stock_num + "^" + str(
                 price) + "^" + volume + "^" + str(fall_rise) + "^"
             self.gap_price_need_data.append(info_str + "," + stock_num + "," + sale_price + "," + buy_price)
-            self.instant_need_data.append(info_str + "," + stock_num + "," + str(price))
+            self.instant_need_data.append(info_str + "," + stock_num + "," + str(price*1000))
 
     def cal_times(self):
         for one in self.rise_fall_times:
