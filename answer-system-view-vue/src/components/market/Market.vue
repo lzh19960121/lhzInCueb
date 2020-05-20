@@ -186,10 +186,10 @@
             },
             tableCellClassName(row, column, rowIndex, columnIndex) {
 
-                if (row.row.filter_event.indexOf('涨') !== -1) {
+                if (row.row.filter_times > 0) {
                     return 'color:red';
                 }
-                if (row.row.filter_event.indexOf('跌') !== -1) {
+                if (row.row.filter_times< 0) {
                     return 'color:green';
                 }
             },
