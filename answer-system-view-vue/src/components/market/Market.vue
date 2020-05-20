@@ -243,13 +243,13 @@
                     return
                 }
                  // minute_rise = '4'
-                if (current_event.indexOf('4') !== -1) {
+                if (current_event === '4') {
                     var minute_rise = parseFloat(current_value);
                     if (minute_rise < this.filter_index.minute_rise) {
                         return
                     }
                 }
-                if (current_event.indexOf('5') !== -1){
+                if (current_event === '5') {
                     var minute_fall = parseFloat(current_value);
                     if (minute_fall > this.filter_index.minute_fall) {
                         return
