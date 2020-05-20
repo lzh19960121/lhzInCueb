@@ -321,12 +321,14 @@ class Filter(object):
             if minute_raise_or_fall_result is not False:
                 if dif > 0:
                     times = self.update_minute_rise_times(minute_name, stock_num)
-                    minute_result = time_str + self.filter_event_config.minute_rise + minute_name + str(
+                    minute_result = time_str + self.filter_event_config.minute_rise + minute_name + "^" + str(
                         format(dif, '.2f')) + "^" + str(times)
+                    print(minute_result)
                 else:
                     times = self.update_minute_fall_times(minute_name, stock_num)
-                    minute_result = time_str + self.filter_event_config.minute_fall + minute_name + str(
+                    minute_result = time_str + self.filter_event_config.minute_fall + minute_name + "^" + str(
                         format(dif, '.2f')) + "^" + str(times)
+                    print(minute_result)
                 self.server.send_message_to_all(minute_result)
                 self.filter_result.append(minute_result)
 
@@ -365,11 +367,12 @@ class Filter(object):
             info_str = util.get_today_time() + "^" + time_str + "^" + stock_name + '^' + stock_num + "^" + str(
                 price) + "^" + volume + "^" + str(fall_rise) + "^"
             self.gap_price_need_data.append(info_str + "," + stock_num + "," + sale_price + "," + buy_price)
-            self.instant_need_data.append(info_str + "," + stock_num + "," + price)
+            self.instant_need_data.append(info_str + "," + stock_num + "," + str(price))
 
     def cal_times(self):
         for one in self.rise_fall_times:
-            util.write_text_apend(r"C:\Users\hangqing1\Desktop"+r"\\"+util.get_today_date(), one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
+            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
+                                  one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
             for one_e in one.events:
                 util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
                                       one_e)
