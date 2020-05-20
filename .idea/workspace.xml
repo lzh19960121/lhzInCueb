@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-market-server/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/Market.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -320,7 +320,8 @@
       <workItem from="1589780382763" duration="527000" />
       <workItem from="1589780960163" duration="1524000" />
       <workItem from="1589850809844" duration="11328000" />
-      <workItem from="1589868081610" duration="23333000" />
+      <workItem from="1589868081610" duration="23376000" />
+      <workItem from="1589938356890" duration="128000" />
     </task>
     <servers />
   </component>
