@@ -181,7 +181,7 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "顺势下跌（%）"))
         self.label_5.setText(_translate("MainWindow", "分钟增长（%）"))
         self.line_instant_fall.setText(_translate("MainWindow", "-1"))
-        self.line_minute_rise.setText(_translate("MainWindow", "0.75"))
+        self.line_minute_rise.setText(_translate("MainWindow", "0.6"))
         self.label_6.setText(_translate("MainWindow", "分钟下跌（%）"))
         self.line_minute_fall.setText(_translate("MainWindow", "-1"))
         self.btn_end.setText(_translate("MainWindow", "停止"))
