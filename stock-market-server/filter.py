@@ -351,7 +351,7 @@ class Filter(object):
         # 先用set去重,把当前的和上次的对比
         change_one_file_info = make_difference(self.full_real_time_info, self.pre_full_real_time_info)
         # 代码，股票名称，买一价格，买一数量，卖一价格，卖一量，成交价格，成交量，高低位转换，类别
-        print(len(change_one_file_info))
+        print("更新了"+str(len(change_one_file_info)))
         for one_line in change_one_file_info:
             stock_num, stock_name, time_str, buy_price, buy_volume, sale_price, sale_volume, price, volume, fall_rise, stock_type = one_line.split(
                 ',')
