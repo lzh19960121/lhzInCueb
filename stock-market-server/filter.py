@@ -63,7 +63,7 @@ class RiseFallTimes(object):
 
     def save_event(self, event_times, minutes_num):
         time_str = util.get_time_ymd_hms()
-        time_str = time_str + "-" + util.datetime_pre_minutes(time_str, minutes_num)
+        time_str = time_str + "-" + str(util.datetime_pre_minutes(time_str, minutes_num))
         record = time_str + "," + self.stock_num + "," + str(event_times) + "," + str(minutes_num)
         minutes_events.append(record)
 
