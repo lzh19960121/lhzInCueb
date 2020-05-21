@@ -63,6 +63,7 @@ class RiseFallTimes(object):
 
     def save_event(self, event_times, minutes_num):
         time_str = util.get_time_ymd_hms()
+        time_str = time_str + "-" + util.datetime_pre_minutes(time_str, minutes_num)
         record = time_str + "," + self.stock_num + "," + str(event_times) + "," + str(minutes_num)
         minutes_events.append(record)
 
@@ -355,7 +356,7 @@ class Filter(object):
         # 先用set去重,把当前的和上次的对比，直接字符串去差集效率较高
         change_one_file_info = make_difference(self.full_real_time_info, self.pre_full_real_time_info)
         # 代码，股票名称，买一价格，买一数量，卖一价格，卖一量，成交价格，成交量，高低位转换，类别
-        print("更新了"+str(len(change_one_file_info)))
+        print("更新了" + str(len(change_one_file_info)))
         for one_line in change_one_file_info:
             stock_num, stock_name, time_str, buy_price, buy_volume, sale_price, sale_volume, price, volume, fall_rise, stock_type = one_line.split(
                 ',')
@@ -376,13 +377,13 @@ class Filter(object):
     def cal_times(self):
         print(len(self.rise_fall_times))
         for one in self.rise_fall_times:
-            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),util.get_today_date()+","+
+            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
+                                  util.get_today_date() + "," +
                                   one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
         print(len(minutes_events))
         for one_e in minutes_events:
             util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
                                   one_e)
-
 
     def record_minute_begin(self):
         minute_begin_price = {}
@@ -482,4 +483,3 @@ class Filter(object):
             except Exception as e:
                 print(e)
         self.cal_times()
-

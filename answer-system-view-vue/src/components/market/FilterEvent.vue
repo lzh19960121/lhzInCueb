@@ -15,44 +15,13 @@
                         width="200"
                 >
                 </el-table-column>
+
                 <el-table-column
                         prop="stock"
                         label="股票"
+                >
+                </el-table-column>
 
-                >
-                </el-table-column>
-                <el-table-column
-                        prop="name"
-                        label="名称"
-
-                >
-                </el-table-column>
-                <el-table-column
-                        prop="price"
-                        label="价格(元)"
-                >
-                </el-table-column>
-                <el-table-column
-                        prop="volume"
-                        label="数量"
-                >
-                </el-table-column>
-                <el-table-column
-                        prop="rise_fall"
-                        label="涨跌(%)"
-                >
-                </el-table-column>
-                <el-table-column
-                        prop="filter_event"
-                        label="事件"
-                        :formatter="formatRole"
-                ></el-table-column>
-                <el-table-column
-                        prop="filter_value"
-                        label="值"
-                >
-
-                </el-table-column>
                 <el-table-column
                         prop="filter_times"
                         label="次数"

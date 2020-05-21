@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/FilterEvent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/answer-system-view-vue/src/components/market/FilterEvent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stock-market-server/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-market-server/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +108,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.filter">
+  <component name="RunManager" selected="Python.util">
     <configuration name="company_name" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AnswerQuestionSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,7 +153,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="writer_local_dic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="util" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AnswerQuestionSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -158,14 +161,14 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stock-market-server" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LocalDicManager/make_stock_info_dic/writer_local_dic.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stock-market-server/util.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -221,15 +224,15 @@
       <item itemvalue="npm.build" />
       <item itemvalue="npm.serve" />
       <item itemvalue="Python.company_name" />
-      <item itemvalue="Python.writer_local_dic" />
       <item itemvalue="Python.filter" />
+      <item itemvalue="Python.util" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.util" />
         <item itemvalue="Python.filter" />
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.build" />
-        <item itemvalue="Python.company_name" />
         <item itemvalue="Python.company_name" />
       </list>
     </recent_temporary>
@@ -325,6 +328,7 @@
       <workItem from="1589951455416" duration="8369000" />
       <workItem from="1589979978988" duration="1394000" />
       <workItem from="1590023285055" duration="6542000" />
+      <workItem from="1590033868986" duration="3535000" />
     </task>
     <servers />
   </component>
@@ -361,6 +365,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AnswerQuestionSystem$util.coverage" NAME="util Coverage Results" MODIFIED="1590037248841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock-market-server" />
     <SUITE FILE_PATH="coverage/AnswerQuestionSystem$filter.coverage" NAME="filter Coverage Results" MODIFIED="1589898847715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock-market-server" />
     <SUITE FILE_PATH="coverage/AnswerQuestionSystem$import.coverage" NAME="import Coverage Results" MODIFIED="1586429381559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AnswerTemplatesManager/test" />
   </component>

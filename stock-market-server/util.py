@@ -1,6 +1,11 @@
 import os
 import datetime
 from functools import reduce
+from datetime import timedelta
+
+
+def string_toDatetime(string):
+    return datetime.datetime.strptime(string, "%Y-%m-%d %H:%M:%S")
 
 
 def get_today_date():
@@ -13,6 +18,13 @@ def get_today_time():
 
 def get_time_ymd_hms():
     return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
+def datetime_pre_minutes(dt_string, minutes):
+    delta = timedelta(minutes=minutes)
+    n_days = string_toDatetime(dt_string) - delta
+    return n_days
+
 
 
 def StrToFloat(s):
@@ -65,3 +77,4 @@ def read_one_file(path: str, code: str):
         lines = [line.strip() for line in f.readlines()]
         f.close()
         return lines  # type:list[str]
+
