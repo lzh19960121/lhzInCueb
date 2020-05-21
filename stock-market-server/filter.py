@@ -376,7 +376,7 @@ class Filter(object):
     def cal_times(self):
         print(len(self.rise_fall_times))
         for one in self.rise_fall_times:
-            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
+            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),util.get_today_date()+","+
                                   one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
         print(len(minutes_events))
         for one_e in minutes_events:
