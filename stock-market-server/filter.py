@@ -63,7 +63,7 @@ class RiseFallTimes(object):
 
     def save_event(self, event_times, minutes_num):
         time_str = util.get_time_ymd_hms()
-        time_str = time_str + "-" + str(util.datetime_pre_minutes(time_str, minutes_num))
+        time_str = str(util.datetime_pre_minutes(time_str, minutes_num)) + "-" + time_str
         record = time_str + "," + self.stock_num + "," + str(event_times) + "," + str(minutes_num)
         minutes_events.append(record)
 
@@ -377,12 +377,12 @@ class Filter(object):
     def cal_times(self):
         print(len(self.rise_fall_times))
         for one in self.rise_fall_times:
-            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date()+"321",
+            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date() + "321",
                                   util.get_today_date() + "," +
                                   one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
         print(len(minutes_events))
         for one_e in minutes_events:
-            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date()+"321",
+            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date() + "321",
                                   one_e)
 
     def record_minute_begin(self):
