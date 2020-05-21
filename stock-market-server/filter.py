@@ -16,6 +16,7 @@ from db import MysqlHelper
 # one_infos[4], one_infos[5], one_infos[6],
 # one_infos[7], one_infos[8]
 mysql = MysqlHelper('127.0.0.1:3306', 'root', '000000', 'filter_result', 'utf-8')
+events = []
 
 
 def make_difference(list1, list2):
@@ -59,14 +60,17 @@ class RiseFallTimes(object):
     three_minute_fall_times = 0
     four_minute_fall_times = 0
     five_minute_fall_times = 0
-    events = []
 
     def save_event(self, event_times, minutes_num):
         time_str = util.get_time_ymd_hms()
         record = time_str + "," + self.stock_num + "," + str(event_times) + "," + str(minutes_num)
-        self.events.append(record)
+        events.append(record)
 
     def one_minute_times_be_zero(self):
+        """
+        分钟结束的时候，把次数记录
+        :return:
+        """
         if self.one_minute_rise_times != 0:
             self.save_event(self.one_minute_rise_times, 1)
         if self.one_minute_fall_times != 0:
@@ -143,7 +147,9 @@ class Filter(object):
         self.instant_need_data = []
         # 初始化数据
         self.server = server
+        # 过滤器运行的标志
         self.filter_flag = True
+        # 加载过滤器的配置
         self.FilterConfig = FilterConfig
         self.filter_result = []
         self.rise_fall_times = []  # type:list[RiseFallTimes]
@@ -323,7 +329,6 @@ class Filter(object):
                     times = self.update_minute_rise_times(minute_name, stock_num)
                     minute_result = time_str + self.filter_event_config.minute_rise + minute_name + "^" + str(
                         format(dif, '.2f')) + "^" + str(times)
-
                 else:
                     times = self.update_minute_fall_times(minute_name, stock_num)
                     minute_result = time_str + self.filter_event_config.minute_fall + minute_name + "^" + str(
@@ -346,9 +351,8 @@ class Filter(object):
         """
         self.gap_price_need_data = []
         self.instant_need_data = []
-        # 如果差集为长度为0,直接return
         self.full_real_time_info = read.get_info_from_memory(size)
-        # 先用set去重,把当前的和上次的对比
+        # 先用set去重,把当前的和上次的对比，直接字符串去差集效率较高
         change_one_file_info = make_difference(self.full_real_time_info, self.pre_full_real_time_info)
         # 代码，股票名称，买一价格，买一数量，卖一价格，卖一量，成交价格，成交量，高低位转换，类别
         print("更新了"+str(len(change_one_file_info)))
@@ -374,9 +378,9 @@ class Filter(object):
         for one in self.rise_fall_times:
             util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
                                   one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
-            for one_e in one.events:
-                util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
-                                      one_e)
+        for one_e in events:
+            util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
+                                  one_e)
 
 
     def record_minute_begin(self):
@@ -424,12 +428,9 @@ class Filter(object):
         while self.filter_flag:
             try:
                 time.sleep(240)
-                oldtime = datetime.datetime.now()
                 self.four_minute_begin_price = self.record_minute_begin()
                 for one in self.rise_fall_times:
                     one.four_minute_times_be_zero()
-                newtime = datetime.datetime.now()
-                print(u'四分钟的处理时间相差：%s微秒' % (newtime - oldtime).microseconds)
             except Exception as e:
                 print(e)
 
@@ -437,12 +438,9 @@ class Filter(object):
         while self.filter_flag:
             try:
                 time.sleep(300)
-                oldtime = datetime.datetime.now()
                 self.five_minute_begin_price = self.record_minute_begin()
                 for one in self.rise_fall_times:
                     one.five_minute_times_be_zero()
-                newtime = datetime.datetime.now()
-                print(u'5分钟的处理时间相差：%s微秒' % (newtime - oldtime).microseconds)
             except Exception as e:
                 print(e)
 
@@ -460,7 +458,6 @@ class Filter(object):
         threading.Thread(target=self.update_5minute_begin_info).start()
         while self.filter_flag:
             try:
-
                 oldtime = datetime.datetime.now()
                 # 加载数据
                 self.load_info(size)
@@ -479,55 +476,9 @@ class Filter(object):
                 self.pre_time_instant_need_data = self.instant_need_data
                 self.pre_full_real_time_info = self.full_real_time_info
                 newtime = datetime.datetime.now()
-                print(u'相差：%s微秒' % (newtime - oldtime).microseconds)
+                print(u'处理一次数据：%s微秒' % (newtime - oldtime).microseconds)
                 time.sleep(2)
             except Exception as e:
                 print(e)
         self.cal_times()
 
-    # def update_minute_begin_info(self):
-    #     # 用最low的方式
-    #     count1 = 0
-    #     count2 = 0
-    #     count3 = 0
-    #     count4 = 0
-    #     count5 = 0
-    #     while self.filter_flag:
-    #         try:
-    #             if count1 == 60:
-    #                 start_tm = datetime.datetime.now()
-    #                 self.minute_begin_price = self.record_minute_begin()
-    #                 for one in self.rise_fall_times:
-    #                     one.one_minute_times_be_zero()
-    #                 end_tm = datetime.datetime.now()
-    #                 print((end_tm - start_tm).seconds)
-    #                 count1 = 0
-    #             elif count2 == 120:
-    #                 self.two_minute_begin_price = self.record_minute_begin()
-    #                 for one in self.rise_fall_times:
-    #                     one.two_minute_times_be_zero()
-    #                 count2 = 0
-    #             elif count3 == 180:
-    #                 self.three_minute_begin_price = self.record_minute_begin()
-    #                 for one in self.rise_fall_times:
-    #                     one.three_minute_times_be_zero()
-    #                 count3 = 0
-    #             elif count4 == 240:
-    #                 self.four_minute_begin_price = self.record_minute_begin()
-    #                 for one in self.rise_fall_times:
-    #                     one.four_minute_times_be_zero()
-    #                 count4 = 0
-    #             elif count5 == 300:
-    #                 self.five_minute_begin_price = self.record_minute_begin()
-    #                 for one in self.rise_fall_times:
-    #                     one.five_minute_times_be_zero()
-    #                 count5 = 0
-    #             else:
-    #                 count1 = count1 + 30
-    #                 count2 = count2 + 30
-    #                 count3 = count3 + 30
-    #                 count4 = count4 + 30
-    #                 count5 = count5 + 30
-    #             time.sleep(30)
-    #         except Exception as e:
-    #             print(e)
