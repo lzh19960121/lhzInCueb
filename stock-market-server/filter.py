@@ -378,7 +378,7 @@ class Filter(object):
         for one in self.rise_fall_times:
             util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
                                   one.stock_num + "," + str(one.instant_fall_times) + "," + str(one.instant_rise_times))
-        for one_e in events:
+        for one_e in minutes_events:
             util.write_text_apend(r"C:\Users\hangqing1\Desktop" + r"\\" + util.get_today_date(),
                                   one_e)
 
