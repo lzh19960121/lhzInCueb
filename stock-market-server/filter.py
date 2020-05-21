@@ -16,7 +16,7 @@ from db import MysqlHelper
 # one_infos[4], one_infos[5], one_infos[6],
 # one_infos[7], one_infos[8]
 mysql = MysqlHelper('127.0.0.1:3306', 'root', '000000', 'filter_result', 'utf-8')
-events = []
+minutes_events = []
 
 
 def make_difference(list1, list2):
@@ -64,7 +64,7 @@ class RiseFallTimes(object):
     def save_event(self, event_times, minutes_num):
         time_str = util.get_time_ymd_hms()
         record = time_str + "," + self.stock_num + "," + str(event_times) + "," + str(minutes_num)
-        events.append(record)
+        minutes_events.append(record)
 
     def one_minute_times_be_zero(self):
         """
