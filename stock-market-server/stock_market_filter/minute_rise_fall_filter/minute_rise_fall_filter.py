@@ -1,3 +1,4 @@
+import util
 
 import threading
 import time
@@ -25,9 +26,13 @@ class MinuteRiseFallTimes(object):
         # 装载每分钟的数据
         for one_stock_num in self.stock_num_list:
             for i in range(1, how_many_minutes + 1):
+                self.minute_rise_times[str(i)] = {}
                 self.minute_rise_times[str(i)][one_stock_num] = 0
+                self.minute_fall_times[str(i)] = {}
                 self.minute_fall_times[str(i)][one_stock_num] = 0
+                self.today_minute_rise_occur_times[str(i)] = {}
                 self.today_minute_rise_occur_times[str(i)][one_stock_num] = 0
+                self.today_minute_fall_occur_times[str(i)] = {}
                 self.today_minute_fall_occur_times[str(i)][one_stock_num] = 0
 
     def save_event(self, stock_num: str, event_times: int, minutes_num: int):
@@ -71,6 +76,7 @@ class MinuteRiseFallTimes(object):
             else:
                 self.minute_fall_times[str(minute_nums)][stock_num] = 0
 
+
 class MinuteRiseFallFilter(object):
     def __init__(self, server, init_data, how_many_minutes, filter_event_config, filter_border_value):
         # 临界值
@@ -105,6 +111,7 @@ class MinuteRiseFallFilter(object):
             price = float(one_infos[7]) / 1000
             self.stock_num_list.append(stock_num)
             for i in range(1, self.how_many_minutes + 1):
+                self.minute_begin_price[str(i)] = {}
                 self.minute_begin_price[str(i)][stock_num] = price
 
     def start_minute_begin_price_update(self):
