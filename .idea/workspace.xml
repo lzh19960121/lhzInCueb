@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AnswerQuestionSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AnswerQuestionSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-market-server/filter/server_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/filter/server_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock-market-server/filter/util/util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +67,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/stock-market-server/util" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/stock-market-server/filter" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -79,9 +78,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\stock-market-server\filter" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\stock-market-server\util" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\stock-market-server\data_save" />
-      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\stock-market-server\filter" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\stock-market-server\data_resource" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\components\rank" />
     </key>
@@ -351,7 +350,7 @@
       <workItem from="1590023285055" duration="6542000" />
       <workItem from="1590033868986" duration="6426000" />
       <workItem from="1590063228124" duration="959000" />
-      <workItem from="1590111994813" duration="18675000" />
+      <workItem from="1590111994813" duration="18789000" />
     </task>
     <servers />
   </component>
