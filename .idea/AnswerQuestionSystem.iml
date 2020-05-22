@@ -29,6 +29,7 @@
       <sourceFolder url="file://$MODULE_DIR$/stock-market-server/filter" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stock-market-server/util" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stock-market-server/filter/util" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/stock-market-server/stock_market_filter" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (Django)" jdkType="Python SDK" />

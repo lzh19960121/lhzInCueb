@@ -11,7 +11,7 @@ import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
 import util
-from stock_market_filter.main_filter import Filter
+from main_filter import Filter
 from websocket_server import WebsocketServer
 
 

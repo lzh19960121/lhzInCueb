@@ -7,9 +7,9 @@ import datetime
 # 用涨跌（幅度）过滤，比如幅度大于某个阈值就不处理。
 from data_resource import read_memory
 import time
-from stock_market_filter import util
+import util
 from data_save.db import MysqlHelper
-from stock_market_filter.minute_rise_fall_filter.minute_rise_fall_filter import MinuteRiseFallFilter
+from minute_rise_fall_filter.minute_rise_fall_filter import MinuteRiseFallFilter
 mysql = MysqlHelper('127.0.0.1:3306', 'root', '000000', 'filter_result', 'utf-8')
 minutes_events = []
 
