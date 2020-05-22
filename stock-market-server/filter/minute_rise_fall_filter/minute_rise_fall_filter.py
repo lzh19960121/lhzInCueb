@@ -50,12 +50,12 @@ class MinuteRiseFallFilter(object):
     def add_minute_rise_times(self, minute_name, stock_num):
         self.rise_fall_times.minute_rise_times[minute_name][stock_num] = \
         self.rise_fall_times.minute_rise_times[minute_name][stock_num] - 1
-        return self.rise_fall_times[minute_name][stock_num]
+        return self.rise_fall_times.minute_rise_times[minute_name][stock_num]
 
     def add_minute_fall_times(self, minute_name: str, stock_num):
         self.rise_fall_times.minute_fall_times[minute_name][stock_num] = \
         self.rise_fall_times.minute_fall_times[minute_name][stock_num] - 1
-        return self.rise_fall_times[minute_name][stock_num]
+        return self.rise_fall_times.minute_fall_times[minute_name][stock_num]
 
     def minute_fall_or_raise(self, minute_name, begin_price_dic):
         for one_instant in self.current_need_data:
