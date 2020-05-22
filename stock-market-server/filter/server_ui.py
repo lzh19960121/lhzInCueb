@@ -12,7 +12,7 @@ from socket import socket, AF_INET, SOCK_STREAM
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
 import util
-from filter.filter import Filter
+from filter import Filter
 from websocket_server import WebsocketServer
 import numpy
 
