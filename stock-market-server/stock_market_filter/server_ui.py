@@ -10,7 +10,7 @@ import threading
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from stock_market_filter import util
+import util
 from stock_market_filter.main_filter import Filter
 from websocket_server import WebsocketServer
 
