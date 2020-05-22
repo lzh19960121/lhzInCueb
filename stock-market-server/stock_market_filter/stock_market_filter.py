@@ -5,7 +5,7 @@ import datetime
 # one_infos[4], one_infos[5], one_infos[6],
 # one_infos[7], one_infos[8]
 # 用涨跌（幅度）过滤，比如幅度大于某个阈值就不处理。
-import read
+from data_resource import read_memory
 import threading
 import time
 from stock_market_filter.util import util
@@ -84,7 +84,7 @@ class Filter(object):
         """
         self.gap_price_need_data = []
         self.instant_need_data = []
-        self.full_real_time_info = read.get_info_from_memory(size)
+        self.full_real_time_info = read_memory.get_info_from_memory(size)
         # 先用set去重,把当前的和上次的对比，直接字符串去差集效率较高
         change_one_file_info = make_difference(self.full_real_time_info, self.pre_full_real_time_info)
         # 代码，股票名称，买一价格，买一数量，卖一价格，卖一量，成交价格，成交量，高低位转换，类别
@@ -110,7 +110,7 @@ class Filter(object):
         """
         :return:
         """
-        init_data = read.get_info_from_memory(size)
+        init_data = read_memory.get_info_from_memory(size)
         self.init_filter(init_data)
         while self.filter_flag:
             try:
