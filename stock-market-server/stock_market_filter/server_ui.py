@@ -11,7 +11,7 @@ import time
 from socket import socket, AF_INET, SOCK_STREAM
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from filter import util
+from stock_market_filter.util import util
 from stock_market_filter.stock_market_filter import Filter
 from websocket_server import WebsocketServer
 import numpy
