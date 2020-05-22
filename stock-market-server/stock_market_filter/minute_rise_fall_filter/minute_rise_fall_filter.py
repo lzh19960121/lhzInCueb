@@ -115,6 +115,7 @@ class MinuteRiseFallFilter(object):
                 self.minute_begin_price[str(i)] = {}
                 self.minute_begin_price[str(i)][stock_num] = price
 
+
     def start_minute_begin_price_update(self):
         """
         开始分钟初始价格的记录，以及每分钟情况的记录
