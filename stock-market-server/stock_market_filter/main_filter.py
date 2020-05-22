@@ -112,7 +112,7 @@ class Filter(object):
         init_data = read_memory.get_info_from_memory(size)
         self.init_filter(init_data)
         while self.filter_flag:
-            try:
+            # try:
                 oldtime = datetime.datetime.now()
                 # 加载数据
                 self.load_info(size)
@@ -128,7 +128,7 @@ class Filter(object):
                 newtime = datetime.datetime.now()
                 print(u'处理一次数据：%s微秒' % (newtime - oldtime).microseconds)
                 time.sleep(2)
-            except Exception as e:
-                print(e)
+            # except Exception as e:
+            #     print(e)
 
 
