@@ -97,6 +97,7 @@ class MinuteRiseFallFilter(object):
         self.init_minute_begin_price(init_data)
         # 记录涨跌次数的类
         self.rise_fall_times = MinuteRiseFallTimes(self.stock_num_list, how_many_minutes)
+        self.start_minute_begin_price_update()
 
 
 
