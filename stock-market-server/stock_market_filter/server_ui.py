@@ -8,13 +8,12 @@
 import sys
 import threading
 import time
-from socket import socket, AF_INET, SOCK_STREAM
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from stock_market_filter.util import util
+from stock_market_filter import util
 from stock_market_filter.main_filter import Filter
 from websocket_server import WebsocketServer
-import numpy
+
 
 class FilterConfig(object):
     # 第二层过滤
@@ -35,11 +34,11 @@ class Ui_MainWindow(object):
     # Called for every client connecting (after handshake)
 
     def new_client(self, client, server):
-        self.listWidget_ip.addItem(util.get_time_ymd_hms()+"New client connected and was given id %d" % client['id'])
+        self.listWidget_ip.addItem(util.get_time_ymd_hms() + "New client connected and was given id %d" % client['id'])
 
     # Called for every client disconnecting
     def client_left(self, client, server):
-        self.listWidget_ip.addItem(util.get_time_ymd_hms()+"Client(%d) disconnected" % client['id'])
+        self.listWidget_ip.addItem(util.get_time_ymd_hms() + "Client(%d) disconnected" % client['id'])
 
     # Called when a client sends a message
     def message_received(self, client, server, message):

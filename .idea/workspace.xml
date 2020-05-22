@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="03a8f05f-aa4f-43b1-82a5-465f47bf62f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-market-server/stock_market_filter/stock_market_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/stock_market_filter/stock_market_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-market-server/stock_market_filter/main_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/stock_market_filter/main_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-market-server/stock_market_filter/server_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/stock_market_filter/server_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-market-server/stock_market_filter/util/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock-market-server/stock_market_filter/util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,11 +88,11 @@
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\components\rank" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\stock-market-server\stock_market_filter" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\answer-system-view-vue\src\components\market" />
       <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\stock_local_dic" />
       <recent name="C:\inetpub\wwwroot\AnswerQuestionSystem\AnswerApp\make_stock_info_dic" />
       <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\templates" />
-      <recent name="C:\Users\liuhuazhen\Desktop\AnswerQuestionSystem\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -351,7 +353,7 @@
       <workItem from="1590023285055" duration="6542000" />
       <workItem from="1590033868986" duration="6426000" />
       <workItem from="1590063228124" duration="959000" />
-      <workItem from="1590111994813" duration="19573000" />
+      <workItem from="1590111994813" duration="19923000" />
     </task>
     <servers />
   </component>
