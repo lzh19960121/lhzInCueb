@@ -8,9 +8,9 @@ import datetime
 import read
 import threading
 import time
-from util import util
+from stock_market_filter.util import util
 from data_save.db import MysqlHelper
-from minute_rise_fall_filter.minute_rise_fall_filter import MinuteRiseFallFilter
+from stock_market_filter.minute_rise_fall_filter.minute_rise_fall_filter import MinuteRiseFallFilter
 mysql = MysqlHelper('127.0.0.1:3306', 'root', '000000', 'filter_result', 'utf-8')
 minutes_events = []
 
