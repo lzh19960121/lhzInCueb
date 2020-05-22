@@ -20,6 +20,10 @@ def get_time_ymd_hms():
     return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
+def get_time_hms():
+    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
 def datetime_pre_minutes(dt_string, minutes):
     delta = timedelta(minutes=minutes)
     n_days = string_toDatetime(dt_string) - delta

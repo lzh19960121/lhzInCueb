@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
         self.server.set_fn_message_received(self.message_received)
 
     def setupUi(self, MainWindow):
-        # 启动服务器
+        # 设置服务器
         threading.Thread(target=self.set_server).start()
         # 启动时间监听
         threading.Thread(target=self.check_need_running).start()
@@ -199,14 +199,12 @@ class Ui_MainWindow(object):
                     'gbk')[0]
                 date_str, size = size_str.split('=')
                 if date_str != util.get_today_date():
-                    
                     continue
                 else:
                     self.listWidget_ip.addItem(util.get_today_time() +
                                                "发现更新数据")
                     self.start_filter(size)
                     break
-                
             except Exception as e:
                 print(e)
 

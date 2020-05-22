@@ -10,11 +10,6 @@ import threading
 import time
 import util
 from db import MysqlHelper
-
-# 代码，股票名称，买一价格，买一数量，卖一价格，卖一量，成交价格，成交量
-# one_infos[0], one_infos[1], one_infos[3],
-# one_infos[4], one_infos[5], one_infos[6],
-# one_infos[7], one_infos[8]
 mysql = MysqlHelper('127.0.0.1:3306', 'root', '000000', 'filter_result', 'utf-8')
 minutes_events = []
 
@@ -60,6 +55,8 @@ class RiseFallTimes(object):
     three_minute_fall_times = 0
     four_minute_fall_times = 0
     five_minute_fall_times = 0
+
+    today_occur_times = 0
 
     def save_event(self, event_times, minutes_num):
         time_str = util.get_time_ymd_hms()

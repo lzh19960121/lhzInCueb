@@ -25,6 +25,8 @@
       <sourceFolder url="file://$MODULE_DIR$/LocalDicManager/stock_local_dic" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/python-websocket-server-master" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/stock-market-server" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/stock-market-server/filter/minute_rise_fall_filter" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/stock-market-server/filter" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (Django)" jdkType="Python SDK" />
